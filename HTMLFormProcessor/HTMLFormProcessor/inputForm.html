@@ -1,0 +1,131 @@
+<!-- Use the attached files as the basis for your assignment.  These are the files we used in WDV101 Form Handling.
+
+Modify the 'Input Form' to add the following fields:
+
+Customer Email - consider using the type='email' value
+
+A set of radio buttons for current academic standing with appropriate values:
+High School
+Freshman
+Sophomore
+
+A drop down list containing the following options:  Use their acronym for the value attribute
+Default option
+Computer Information Systems
+Graphic Design
+Web Development
+
+Two checkboxes with appropriate value attributes:
+Please contact me with program information
+I would like to contact an program advisor
+
+A textarea for 'Comments'
+
+Style and form both pages to create a more professional looking product.
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+ -->
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV101 Intro HTML and CSS</title>
+
+<style>
+
+	form	{
+    border-style: double;
+		width:600px;
+		margin:auto;
+		background-color:lightblue;	
+		padding-left: 20px;
+	}
+	
+	form legend	{
+		font-size:larger;
+		text-align:center;
+	}
+	
+	body {
+    background-color:antiquewhite;
+    text-align: center;
+  }
+
+
+</style>
+
+</head>
+
+<body>
+<h1>WDV101 Intro HTML and CSS</h1>
+<h2>UNIT 5 - Lesson 2 Server Side Forms</h2>
+<p>This is an example input form that will demonstrate how a form connects to a server side process.</p>
+<form id="form1" name="form1" method="post" action="formHandler.php">
+<br>
+  <legend>Example Form</legend>
+  
+  <p>
+  	<label for="first_name">First Name:</label> 
+    <input type="text" name="first_name" id="first_name" />
+  </p>
+  
+  <p>
+  	<label for="last_name">Last Name:</label> 
+    <input type="text" name="last_name" id="last_name" />
+  </p>
+  
+<p>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+</p>
+
+  <p>
+  	<label for="school_name">School Name:</label> 
+    <input type="text" name="school_name" id="school_name" />
+  </p>
+
+  <p>
+    <p>Select Academic Standing:</p>
+    <input type="radio" id="highSchool" name="academicStanding" value="High School">
+    <label for="highSchool">High School</label><br>
+    <input type="radio" id="freshman" name="academicStanding" value="Freshman">
+    <label for="freshman">Freshman</label><br>
+    <input type="radio" id="sophomore" name="academicStanding" value="Sophomore">
+    <label for="sophomore">Sophomore</label>
+  </p>
+
+  <p>
+     <label for="selectedMajor">Select your Major:</label> 
+      <select name="selectedMajor" id="selectedMajor">
+        <option value="Default">Default</option>
+        <option value="CIS">Computer Information Systems</option>
+        <option value="GRD">Graphic Design</option>
+        <option value="WDV">Web Development</option>
+      </select>
+  </p>
+
+  <p>
+    <input type="checkbox" id="programInfo" name="programInfo" value="Program Information">
+    <label for="programInfo"> Please contact me with program information</label><br>
+    <input type="checkbox" id="programAdvisor" name="programAdvisor" value="Program Advisor">
+    <label for="programAdvisor"> I would like to contact an program advisor</label><br>
+  </p>
+
+  
+    <h4>Leave a Comment Below!</h4>
+      <textarea rows="4" cols="50" name="comment" id="comment"></textarea>
+    
+
+  <p>
+    <input type="submit" name="button" id="button" value="Submit" />
+    <input type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+
+</form>
+
+<p>&nbsp;</p>
+</body>
+
+</html>
