@@ -26,11 +26,17 @@ if(isset($_POST) && isset($_POST['button'])) {
 
 body {
         height: 100vh;
-        background-image: linear-gradient(to bottom right, rgb(106, 108, 220), rgb(13, 2, 90));
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
         background-repeat: no-repeat;
         font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', serif;
     }
     
+    h1 {
+        background: transparent;
+        text-shadow: 4px 3px 0px #7A7A7A;
+        color: white; 
+    }
+
     .mainBody {
         height: 90vh;
         display: flex;
@@ -40,10 +46,10 @@ body {
     }
 
     #contactForm {
-        color: black;
+        color: white;
         display: flex;
         flex-direction: column;
-        background-color: rgb(79, 151, 190);
+        background-color: rgb(63,94,251);
         padding: .75rem;
         border-radius: 5px;
         width: 300px;
