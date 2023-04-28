@@ -11,25 +11,27 @@ if (isset($_POST['submit'])) {
 
     try {
         require "dbConnect.php";
-
-        $sql = "SELECT event_user_name, ";
-        $sql .= "event_user_password ";
-        $sql .= "FROM wdv_341_event_users";
-        $sql .= "WHERE event_user_name=:userName ";
-        $sql .= "AND event_user_password=:userPW";
-
+    
+        $sql = "SELECT event_username, ";
+        $sql .= "event_password ";
+        $sql .= "FROM wdv_341_event_users ";
+        $sql .= "WHERE event_username=:userName ";
+        $sql .= "AND event_password=:userPW";
+        
         $stmt = $conn->prepare($sql);
-
+        
         $stmt->bindParam(':userName', $loginName);
         $stmt->bindParam(':userPW', $loginPW);
-
+        
         $stmt->execute();
-
+        
+        
+    
         $resultArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($resultArray);
-
+        
+    
         $numRows = count($resultArray);
-
+    
         if ($numRows == 1) {
             $_SESSION['validUser'] = true;
             $validUser = true;
@@ -41,6 +43,7 @@ if (isset($_POST['submit'])) {
         $message = "There has been a problem. The system administrator has been contacted. Please try again later.";
         error_log($e->getMessage());
     }
+    
 }
 ?>
 <!DOCTYPE html>
@@ -98,10 +101,10 @@ if (isset($_POST['submit'])) {
         <?php
 
             if($validUser){
-                var_dump($validUser);
+                
             ?>
 
-            <div style="background-color:lightgrey; width:500px; border-radius:5px; padding:.5%; margin:auto;">
+            <div style="background-color: #9060bd; width:500px; border-radius:5px; padding:.5%; margin:auto;">
 
                 <h3>Welcome to the admin area for valid users</h3>
 
@@ -144,4 +147,4 @@ if (isset($_POST['submit'])) {
     }
 ?>
 </body>
-</html>
+</html>s
